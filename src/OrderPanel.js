@@ -11,7 +11,7 @@ export default ({user}) => {
         <h2  style={{
             fontWeight:"bolder",
             fontSize:"3em"
-        }}>User Orders</h2>
+        }}>Order Panel</h2>
         
         <Card className="card-info">
             <CardContent>
@@ -30,17 +30,17 @@ export default ({user}) => {
                 </div>
                 <div className="my-div-order">
                     <h2 className="typo-title">Username:</h2>
-                     <h2 className="typo-item"><span style={{fontWeight:"lighter"}}>{user.username}</span></h2>
+                     <h2 className="typo-item"><span style={{fontWeight:"bolder"}}>{user.username}</span></h2>
                 </div>
 
                 <div className="my-div-order">
                     <h2 className="typo-title">Email:</h2>
-                    <h2 className="typo-item"><span style={{fontWeight:"lighter"}}>{user.email}</span></h2>
+                    <h2 className="typo-item"><span style={{fontWeight:"bolder"}}>{user.email}</span></h2>
                 </div>
 
                 <div className="my-div-order">
                     <h2 className="typo-title">Phone:</h2>
-                    <h2 className="typo-item"><span style={{fontWeight:"lighter"}}>{user.phone}</span></h2>
+                    <h2 className="typo-item"><span style={{fontWeight:"bolder"}}>{user.phone}</span></h2>
                 </div>
                 
             </CardContent>
@@ -54,7 +54,7 @@ export default ({user}) => {
                     fontSize:"2em",
                     textAlign:"left"
                 }}>Items</h2>
-                <Divider/>   
+                <Divider className = "my-div"/>   
 
         {user.orders.map((order) => {
             ctr+=1;

@@ -20,12 +20,12 @@ function App2(){
     return (
 
         
-        <Card className="container">
+        <div className="container">
 
             <UserP className="user-container" user={selectedUser} setUser={setSelectedUser}></UserP>
             <OrderP className="order-container" user={selectedUser}></OrderP>
 
-        </Card>
+        </div>
 
     )
 
