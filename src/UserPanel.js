@@ -23,10 +23,7 @@ export default ({user, setUser}) => {
 
     const showOrder = (user) => {
 
-        let temp = {
-            "name": '',
-            "orders": []
-        };
+        let temp = {};
         //arr = orders.get(user.id);
        {orders.map((item)=>{
 
@@ -35,7 +32,11 @@ export default ({user, setUser}) => {
             temp = {
 
                 "name": user.name,
-                "orders": item.orders
+                "orders": item.orders,
+                'email': user.email,
+                'username': user.username,
+                'phone': user.phone,
+                'id': user.id
 
             }
         }

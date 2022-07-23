@@ -7,13 +7,23 @@
     text-align: center  ;
 
 }
+.typo-user-info{
+    font-size: 1.5em;
+}
 
 .card-info{
 
 
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align:left;
+    margin-bottom: 1rem;
+
+}
+.card-order{
+
+    margin-bottom: 1rem;
+
 
 }
 .my-div{
@@ -24,6 +34,15 @@ margin-bottom: 1rem;
 
     display: flex;
     flex-direction: row;
+}
+.avatar{
+
+    margin:auto;
+    margin-top: 1rem;
+    width:150px;
+    height: 15px;
+    justify-self: center;
+
 }
 
 .typo-title{

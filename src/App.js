@@ -9,6 +9,10 @@ function App2(){
 
     const [selectedUser, setSelectedUser] = useState({
         'name' : '',
+        'email': '',
+        'username': '',
+        'phone': '',
+        'id': '',
         'orders' : []
     });
 
