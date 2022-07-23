@@ -1,0 +1,44 @@
+.order-panel{
+
+    width:100%;
+    height: 100%;
+    display:flex;
+    border: 1px solid green;
+    text-align: center  ;
+
+}
+
+.card-info{
+
+
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+}
+.my-div{
+margin-bottom: 1rem;
+}
+
+.my-div-order{
+
+    display: flex;
+    flex-direction: row;
+}
+
+.typo-title{
+    font-size:1em;
+    align-self: flex-start;
+    width: 50%;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+}
+
+.typo-item{
+    width: 50%;
+    text-align: right;
+    font-size:1em;
+    font-weight: 900;
+    font-family: 'Roboto Slab', sans-serif;
+    align-self:flex-end;
+}

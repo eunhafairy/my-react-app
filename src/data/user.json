@@ -1,0 +1,10 @@
+[{
+    "name" : "Anna",
+    "orders" : ["chips", "shirt"]
+},{
+    "name" : "Dan",
+    "orders" : ["pants", "brief"]
+},{
+    "name" : "Jason",
+    "orders" : ["tumbler", "cap"]
+}]
