@@ -1,6 +1,6 @@
 
 import {useState, useEffect} from 'react';
-import {Button, Card, CardActions, CardContent, Typography} from '@mui/material';
+import {Button, Card, CardActions, CardContent, Typography, List, ListItem, ListItemAvatar, ListItemText, Avatar, Divider, IconButton} from '@mui/material';
 import axios from 'axios';
 import orders from '../src/data/orders.json';
 import './UserPanel.css'
@@ -70,33 +70,32 @@ export default ({user, setUser}) => {
     
     <div className='user-panel'>
 
+        <List className="card" style={{backgroundColor:"aqua"}}>
         {users.map((user) => {
             let _path = "https://robohash.org/"+user.id;
             return (
-            <Card className="card" style={{backgroundColor:"aqua"}}>
-                <CardContent className="card-content">
-                    <img src={_path}></img>
+                <ListItem className="card-content"
+                secondaryAction={
 
-                    <div className="info">
-                        <Typography style={{
+                    <IconButton edge="end">
+                        {/* <Button onClick={(event)=> showOrder(user)}>Show Order</Button> */}
+                        
+                    </IconButton>
 
-                            fontSize: "2em",
-                            fontWeight: "bolder"
+                }>
+                    <ListItemAvatar>
+                        <Avatar src={_path}></Avatar>
+                    </ListItemAvatar>  
+                    <ListItemText
+                        primary={user.name}
+                        secondary={user.email}
+                    />
+                    
+                </ListItem>
 
-                        }}>
-                            {user.name}
-                        </Typography>
-                        <Typography>
-                            {user.email}
-                        </Typography>
-                    </div>
-                </CardContent>
-                <CardActions>
-                    <Button onClick={(event)=> showOrder(user)}>Show Order</Button>
-                </CardActions>
-            </Card>
             )
         })}
+        </List>
 
     </div>);
 }
