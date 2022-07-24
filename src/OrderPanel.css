@@ -18,20 +18,25 @@
     flex-direction: row;
     margin-top: .5rem;
     margin-bottom: .5rem;
-
+    padding: .5rem;
 }
 
 .standard-basic{
     flex-grow:4;
+    background-color: none;
+    outline: none;
 }
 .btn-add{
-    flex-grow:1
+    flex-grow:1;
+    align-self: center;
+    width: 30px;
+    height: 40px;
 }
 
 .card-info{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin: .5rem;
-    
+    background-color: #E6B5C9;
     padding: .5rem;
 border-radius:  15px;
     height: auto;
@@ -49,6 +54,10 @@ overflow-y:auto ;
 }
 .my-div{
 margin-bottom: 1rem;
+}
+.btn-add{
+
+
 }
 
 .my-div-order{
@@ -73,10 +82,12 @@ margin-bottom: 1rem;
     width: 50%;
     text-align: left;
     font-family: 'Roboto', sans-serif;
+    color:#612F44;
 }
 
 .typo-item{
     width: 50%;
+    color:#612F44;
     text-align: right;
     font-size:1em;
     font-weight: 900;

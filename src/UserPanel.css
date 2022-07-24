@@ -13,6 +13,9 @@
 .card-content{
     display:flex;
     flex-direction: row;
+    background-color: #E6B5C9;
+    margin-bottom:.5rem;
+    border-radius: 15px;
 }
 .info{
     display: flex;

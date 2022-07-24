@@ -1,8 +1,34 @@
 import Container from "@mui/material/Container";
 import './OrderPanel.css';
+import {styled} from '@mui/material/styles'
 import { useEffect, useState } from "react";
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import {TextField, Paper, List, ListItem, Avatar, Divider, Card, CardContent, h2, Button, ListItemText} from "@mui/material";
 export default ({user}) => {
+
+
+    // custom css
+const CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+      color: '#612F44',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: '#612F44',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#612F44',
+      },
+      '&:hover fieldset': {
+        borderColor: '#612F44',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#612F44',
+      },
+    },
+  });
+  
+
     
     let ctr = 0;
     let _path = "https://robohash.org/"+user.id;
@@ -38,7 +64,8 @@ export default ({user}) => {
 
                     fontWeight:"bolder",
                     fontSize:"2em",
-                    textAlign:"center"
+                    textAlign:"center",
+                    color: "#612F44"
                 }}>User Information</h2>
                 <Divider className = "my-div"/>
                 
@@ -66,8 +93,10 @@ export default ({user}) => {
                 <Divider className="my-div" style={{marginTop:".3rem"}}></Divider>
             <div className="card-add-content">
                 
-                <TextField onChange={handleUserInput} value={newOrder} className="standard-basic" label="Enter order" variant="standard" />
-                <Button onClick={getValue} className="btn-add" id="btn-add">Add Order</Button>
+                <CssTextField type="text" onChange={handleUserInput} value={newOrder} className="standard-basic" label="Enter order" variant="standard"/>
+                <Button style={{marginLeft:"2px", color:"#E6B5C9", backgroundColor: "#612F44"}} variant="contained" startIcon={<AddCircleOutlinedIcon/>} onClick={getValue} className="btn-add" id="btn-add">
+                    Add
+                </Button>
 
             </div>
             
@@ -75,6 +104,9 @@ export default ({user}) => {
 
 
                     
+
+
+
 
 
          <List className="card-order">

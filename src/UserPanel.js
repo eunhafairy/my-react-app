@@ -1,7 +1,9 @@
 
 import {useState, useEffect} from 'react';
-import {Button, Card, CardActions, CardContent, Typography,Paper, List, ListItem, ListItemAvatar, ListItemText, Avatar, Divider, IconButton} from '@mui/material';
+import {Button,Icon,Paper, List, ListItem, ListItemAvatar, ListItemText, Avatar, Divider, IconButton} from '@mui/material';
 import axios from 'axios';
+import  {ShoppingCart} from '@mui/icons-material';
+
 import orders from '../src/data/orders.json';
 import './UserPanel.css'
 
@@ -78,11 +80,14 @@ export default ({user, setUser}) => {
                 secondaryAction={
 
                     <IconButton edge="end">
-                        <Button onClick={(event)=> showOrder(user)}>Show Order</Button>
-                        
+                        <ShoppingCart onClick={(event)=> showOrder(user)}></ShoppingCart>
                     </IconButton>
 
                 }>
+               
+
+             
+                        
                     <ListItemAvatar>
                         <Avatar src={_path}></Avatar>
                     </ListItemAvatar>  
@@ -90,9 +95,11 @@ export default ({user, setUser}) => {
                         primary={user.name}
                         secondary={user.email}
                     />
+                    <Divider/>
+               
+                    
                     
                 </ListItem>
-
             )
         })}
         </List>
