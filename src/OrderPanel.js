@@ -1,24 +1,44 @@
 import Container from "@mui/material/Container";
 import './OrderPanel.css';
-import {Avatar, Divider, Card, CardContent, h2} from "@mui/material";
+import { useEffect, useState } from "react";
+import {TextField, Paper, List, ListItem, Avatar, Divider, Card, CardContent, h2, Button, ListItemText} from "@mui/material";
 export default ({user}) => {
     
     let ctr = 0;
     let _path = "https://robohash.org/"+user.id;
+    const [newOrder, setNewOrder] = useState('');
+   
+    
+   
+    const handleUserInput = (event) =>{
+        setNewOrder(event.target.value);
+    };
+
+    
+    const getValue = ()=>{
+
+        user.orders.push(newOrder);
+        setNewOrder('');
+
+    }
+
     return ( 
 
-    <Container className="order-panel" >
+    <Paper className="order-panel" >
         <h2  style={{
             fontWeight:"bolder",
             fontSize:"3em"
         }}>Order Panel</h2>
+
         
-        <Card className="card-info">
-            <CardContent>
+        
+        <div className="card-info">
+
                 <h2 style={{
 
                     fontWeight:"bolder",
-                    fontSize:"2em"
+                    fontSize:"2em",
+                    textAlign:"center"
                 }}>User Information</h2>
                 <Divider className = "my-div"/>
                 
@@ -43,33 +63,42 @@ export default ({user}) => {
                     <h2 className="typo-item"><span style={{fontWeight:"bolder"}}>{user.phone}</span></h2>
                 </div>
                 
-            </CardContent>
-        </Card>
-         <Card className="card-order">
-                <CardContent>
-                     
-                <h2 style={{
+                <Divider className="my-div" style={{marginTop:".3rem"}}></Divider>
+            <div className="card-add-content">
+                
+                <TextField onChange={handleUserInput} value={newOrder} className="standard-basic" label="Enter order" variant="standard" />
+                <Button onClick={getValue} className="btn-add" id="btn-add">Add Order</Button>
+
+            </div>
+            
+        </div>
+
+
                     
-                    fontWeight:"bolder",
-                    fontSize:"2em",
-                    textAlign:"left"
-                }}>Items</h2>
-                <Divider className = "my-div"/>   
+
+
+         <List className="card-order">
+                
+            <h2 style={{
+                fontWeight:"bolder",
+                fontSize:"2em"
+            }}>Items</h2>
+            <Divider className = "my-div"/>   
+                
 
         {user.orders.map((order) => {
             ctr+=1;
             return (
                 
-                <div class="my-div-order">
-                    <h2 className="typo-title">{ctr}: </h2>
-                    <h2 className="typo-item">{order}</h2>
-                </div>
+                <ListItem>     
+                    
+                    <ListItemText>Item {ctr}: {order}</ListItemText>
+                </ListItem>
+            
              )
             })}
-          </CardContent>
             
-        </Card>
-
-    </Container>
+        </List>
+    </Paper>
     )
 }

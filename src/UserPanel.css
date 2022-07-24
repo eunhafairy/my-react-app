@@ -1,12 +1,12 @@
 .card{
 
-    border: 1px solid yellow;
-    background-color: red;
+    
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     width: 100%;
-    overflow: auto;
+    height:100%;
+
+    
 
 }
 
@@ -24,11 +24,10 @@
 
 .user-panel{
     width: 100%;    
-    flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     overflow: auto;
-    
+    height:100%;
 
 
 }

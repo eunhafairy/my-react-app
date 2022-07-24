@@ -1,6 +1,6 @@
 
 import {useState, useEffect} from 'react';
-import {Button, Card, CardActions, CardContent, Typography, List, ListItem, ListItemAvatar, ListItemText, Avatar, Divider, IconButton} from '@mui/material';
+import {Button, Card, CardActions, CardContent, Typography,Paper, List, ListItem, ListItemAvatar, ListItemText, Avatar, Divider, IconButton} from '@mui/material';
 import axios from 'axios';
 import orders from '../src/data/orders.json';
 import './UserPanel.css'
@@ -68,9 +68,9 @@ export default ({user, setUser}) => {
 
     return (
     
-    <div className='user-panel'>
+    <Paper className='user-panel'>
 
-        <List className="card" style={{backgroundColor:"aqua"}}>
+        <List className="card">
         {users.map((user) => {
             let _path = "https://robohash.org/"+user.id;
             return (
@@ -78,7 +78,7 @@ export default ({user, setUser}) => {
                 secondaryAction={
 
                     <IconButton edge="end">
-                        {/* <Button onClick={(event)=> showOrder(user)}>Show Order</Button> */}
+                        <Button onClick={(event)=> showOrder(user)}>Show Order</Button>
                         
                     </IconButton>
 
@@ -97,5 +97,5 @@ export default ({user, setUser}) => {
         })}
         </List>
 
-    </div>);
+    </Paper>);
 }

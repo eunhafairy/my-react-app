@@ -19,11 +19,18 @@ function App2(){
 
     return (
 
+       
         
         <div className="container">
 
-            <UserP className="user-container" user={selectedUser} setUser={setSelectedUser}></UserP>
-            <OrderP className="order-container" user={selectedUser}></OrderP>
+        <div className='header'>
+            <h1>My header</h1>    
+        </div>    
+        <div style={{display: "flex", flexDirection:"row", height: '90%', width:"100%", padding:"1rem"}}>
+
+        <UserP className="user-container" user={selectedUser} setUser={setSelectedUser}></UserP>
+        <OrderP className="order-container" user={selectedUser}></OrderP>
+        </div>
 
         </div>
 
