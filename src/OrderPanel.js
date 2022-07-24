@@ -1,6 +1,7 @@
 import Container from "@mui/material/Container";
 import './OrderPanel.css';
-import {styled} from '@mui/material/styles'
+import {styled} from '@mui/material/styles';
+import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
 import { useEffect, useState } from "react";
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import {TextField, Paper, List, ListItem, Avatar, Divider, Card, CardContent, h2, Button, ListItemText} from "@mui/material";
@@ -55,13 +56,8 @@ export default ({user, ready}) => {
             
 
             
-            <Paper className="order-panel" >
-                <h2  style={{
-                    fontWeight:"bolder",
-                    fontSize:"3em"
-                }}>Order Panel</h2>
-        
-                
+            <Paper style={{background:"transparent"}} className="order-panel" >
+            
                 
                 <div className="card-info">
         
@@ -146,9 +142,24 @@ export default ({user, ready}) => {
     else{
 
         return(
-            <Paper className="order-panel" >
+            <Paper style={{background:"transparent"}} className="order-panel" >
 
-                <h1>Select a user.</h1>
+                <div className="card-info" style={{
+                    display:"flex",
+                    flexDirection:"column",
+                    alignItems:"center",
+                    justifyContent:"center",
+                    background:"transparent",
+                    height:"100%"
+                }}>
+
+                <h2 style={{
+
+                    fontSize:"2em"
+
+                }}>Select a user.</h2>
+                <PanToolAltIcon fontSize="large"></PanToolAltIcon>
+                </div>
 
             </Paper>
         )

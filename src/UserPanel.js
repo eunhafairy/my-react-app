@@ -24,6 +24,8 @@ export default ({user, setUser, setReady}) => {
 
     }, []);
 
+
+
     // AJAX
 
     const showOrder = (user) => {
@@ -49,7 +51,7 @@ export default ({user, setUser, setReady}) => {
        })}
 
        
-      
+      setSelected(user.id);
        setReady(true);
         setUser(temp);
     };
@@ -67,6 +69,12 @@ export default ({user, setUser, setReady}) => {
 
     };
 
+    const checkIfActive = (id) =>{
+
+        if (id === selected) return true;
+        return false;
+    }
+
     const handleUserInput = (event) =>{
         setName(event.target.value);
     };
@@ -74,13 +82,13 @@ export default ({user, setUser, setReady}) => {
 
     return (
     
-    <Paper className='user-panel' >
+    <Paper style={{background:"transparent"}} className='user-panel' >
 
-        <List className="card">
+        <List  className="card">
         {users.map((user) => {
             let _path = "https://robohash.org/"+user.id;
             return (
-                <ListItem className="card-content" onClick={(event)=> showOrder(user)}>
+                <ListItem className={`card-content ${checkIfActive(user.id) ? "active":""}`} onClick={(event)=> showOrder(user)}>
                
 
              

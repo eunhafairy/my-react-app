@@ -6,7 +6,7 @@
     width: 100%;
     height:100%;
 
-    
+
 
 }
 
@@ -23,7 +23,7 @@
     background-color: #612F44;
     color: #E6B5C9;
 }
-.card-content-selected{
+.active{
     background-color: #612F44;
     color: #E6B5C9;
 }
@@ -41,7 +41,6 @@
     flex-direction: column;
     overflow: auto;
     height:100%;
-
 
 }
 img{

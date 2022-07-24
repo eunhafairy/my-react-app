@@ -9,7 +9,8 @@
 
     height:100%;
     width: 60%;
-    
+    background: rgb(230, 181, 201, 0.1);
+
     
 
 }
@@ -18,6 +19,15 @@
 top:0;
 height: 10%;
 background-color:#614D55;
+display:flex;
+justify-content: start;
+padding: 1rem;
+align-items: center ;
+}
+
+.header h1{
+    color: #E6B5C9;
+    font-family: "Dancing Script", cursive;
 }
 
 .order-container{
