@@ -7,15 +7,18 @@ import  {ShoppingCart} from '@mui/icons-material';
 import orders from '../src/data/orders.json';
 import './UserPanel.css'
 
-export default ({user, setUser}) => {
+export default ({user, setUser, setReady}) => {
     
     const [users, setUsers] = useState([]);
     const [name, setName] = useState('');
+    const [selected, setSelected] = useState('');
+
     useEffect(()=>{
         axios.get('https://jsonplaceholder.typicode.com/users')
         .then((res)=>{
     
-            setUsers(res.data)
+            setUsers(res.data);
+            
     
         })
 
@@ -47,6 +50,7 @@ export default ({user, setUser}) => {
 
        
       
+       setReady(true);
         setUser(temp);
     };
 
@@ -70,20 +74,13 @@ export default ({user, setUser}) => {
 
     return (
     
-    <Paper className='user-panel'>
+    <Paper className='user-panel' >
 
         <List className="card">
         {users.map((user) => {
             let _path = "https://robohash.org/"+user.id;
             return (
-                <ListItem className="card-content"
-                secondaryAction={
-
-                    <IconButton edge="end">
-                        <ShoppingCart onClick={(event)=> showOrder(user)}></ShoppingCart>
-                    </IconButton>
-
-                }>
+                <ListItem className="card-content" onClick={(event)=> showOrder(user)}>
                
 
              

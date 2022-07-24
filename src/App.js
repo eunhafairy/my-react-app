@@ -16,6 +16,8 @@ function App2(){
         'orders' : []
     });
 
+    const [isReady, setReady] = useState(false);
+
 
     return (
 
@@ -28,8 +30,8 @@ function App2(){
         </div>    
         <div style={{display: "flex", flexDirection:"row", height: '90%', width:"100%", padding:"1rem"}}>
 
-        <UserP className="user-container" user={selectedUser} setUser={setSelectedUser}></UserP>
-        <OrderP className="order-container" user={selectedUser}></OrderP>
+        <UserP className="user-container" user={selectedUser} setUser={setSelectedUser} setReady={setReady}></UserP>
+        <OrderP className="order-container" user={selectedUser} ready={isReady}></OrderP>
         </div>
 
         </div>

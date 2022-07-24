@@ -12,10 +12,20 @@
 
 .card-content{
     display:flex;
+    cursor: pointer;
+
     flex-direction: row;
     background-color: #E6B5C9;
     margin-bottom:.5rem;
     border-radius: 15px;
+}
+.card-content:hover{
+    background-color: #612F44;
+    color: #E6B5C9;
+}
+.card-content-selected{
+    background-color: #612F44;
+    color: #E6B5C9;
 }
 .info{
     display: flex;
